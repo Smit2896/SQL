@@ -2,7 +2,7 @@
 
 1777: [Product's Price for Each Store](https://leetcode.com/problems/products-price-for-each-store/)
 
-```SQL
+```sql
 SELECT product_id,
        Max(CASE
              WHEN store = 'store1' THEN price
