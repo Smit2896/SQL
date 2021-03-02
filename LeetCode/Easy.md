@@ -59,3 +59,28 @@ WHERE  ( A.student_name != B.student_name
              AND A.student_id != C.student_id ) 
 #Tricky conditions    
 ```
+
+1633: [Percentage of Users Attended a Contest](https://leetcode.com/problems/percentage-of-users-attended-a-contest/)
+
+```sql
+SELECT r.contest_id,
+       Round((Count(r.user_id) / (SELECT Count(*)
+                                   FROM   users) ) * 100, 2) AS percentage
+FROM   register r
+       JOIN users u using(user_id)
+GROUP  BY r.contest_id
+ORDER  BY percentage DESC,
+          r.contest_id 
+```
+1241: [Number of Comments per Post](https://leetcode.com/problems/number-of-comments-per-post/)
+
+```sql
+SELECT A.sub_id                 AS post_id,
+       Count(DISTINCT B.sub_id) AS number_of_comments
+FROM   submissions A
+       LEFT JOIN submissions B
+              ON A.sub_id = B.parent_id
+WHERE  A.parent_id IS NULL
+GROUP  BY A.sub_id 
+##For me - self join queries are little tricky
+```
