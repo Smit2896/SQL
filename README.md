@@ -8,4 +8,4 @@ It contains following:
 * Interesting topics I found
 * Some SQL Memes
 
-
+![SQLMeme](https://github.com/Smit2896/SQL/blob/main/SQLMemes.jpg)
