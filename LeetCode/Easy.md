@@ -42,3 +42,20 @@ WHERE  mail REGEXP '^[a-zA-Z][a-zA-Z0-9\.\_\-]*@leetcode.com$'
 
 #RegexEmailQuery - Challenging
 ```
+1623: [All Valid Triplets That Can Represent a Country](https://leetcode.com/problems/all-valid-triplets-that-can-represent-a-country/)
+
+```sql
+SELECT A.student_name AS member_A,
+       B.student_name AS member_B,
+       C.student_name AS member_C
+FROM   schoola A,
+       schoolb B,
+       schoolc C
+WHERE  ( A.student_name != B.student_name
+         AND C.student_name != B.student_name
+         AND A.student_name != C.student_name )
+       AND ( A.student_id != B.student_id
+             AND C.student_id != B.student_id
+             AND A.student_id != C.student_id ) 
+#Tricky conditions    
+```
