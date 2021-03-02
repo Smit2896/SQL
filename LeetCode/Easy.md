@@ -15,6 +15,7 @@ SELECT product_id,
            END) AS store3
 FROM   products
 GROUP  BY product_id; 
+# Transpose
 ```
 1280: [Students and Examinations](https://leetcode.com/problems/students-and-examinations/)
 
