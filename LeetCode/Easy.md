@@ -16,3 +16,19 @@ SELECT product_id,
 FROM   products
 GROUP  BY product_id; 
 ```
+1280: [Students and Examinations](https://leetcode.com/problems/students-and-examinations/)
+
+~~~sql
+SELECT s.student_id,
+       s.student_name,
+       sub.subject_name,
+       Count(e.subject_name) AS attended_exams
+FROM   students s
+       CROSS JOIN subjects sub
+       LEFT JOIN examinations e using(student_id, subject_name)
+GROUP  BY s.student_id,
+          sub.subject_name
+ORDER  BY s.student_id,
+          sub.subject_name
+
+~~~

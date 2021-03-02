@@ -1,7 +1,7 @@
 ### Leetcode Problems -> Difficulty = Hard
 1479: [Sales by Day of the Week](https://leetcode.com/problems/sales-by-day-of-the-week/)
 
-```
+```sql
 SELECT item_category AS CATEGORY,
        Sum(CASE
              WHEN Dayofweek(o.order_date) = 2 THEN quantity

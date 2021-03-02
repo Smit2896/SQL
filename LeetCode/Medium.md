@@ -2,7 +2,7 @@
 
 1421: [NPV Queries](https://leetcode.com/problems/npv-queries/)
 
-```SQL
+```sql
 SELECT q.id,
        q.year,
        COALESCE(n.npv, 0) AS npv
