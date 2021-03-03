@@ -84,3 +84,13 @@ WHERE  A.parent_id IS NULL
 GROUP  BY A.sub_id 
 ##For me - self join queries are little tricky
 ```
+
+1527: [Patients With a Condition](https://leetcode.com/problems/patients-with-a-condition/)
+
+```sql
+SELECT *
+FROM   patients
+WHERE  conditions LIKE 'DIAB1%'
+        OR conditions LIKE '% DIAB1%' 
+#very simple - though one might forget the second condition here
+```
